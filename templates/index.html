@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Brain Tumor Classification</h1>
+        
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" id="uploadImage" name="image" accept=".jpg, .jpeg, .png" required>
+            <button type="submit">Upload & Predict</button>
+        </form>
+        
+        <div id="result" class="result-container">
+            <!-- Prediction result will be displayed here -->
+        </div>
+        
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
